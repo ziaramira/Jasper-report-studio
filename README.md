@@ -5,4 +5,6 @@
 
 <h5>2.In QR Propeties Select Code Expression OR add your variable Or Data in Code Expression Field. Select Now in Evaluation Time.</h5>
 
+![PROPRI](https://github.com/user-attachments/assets/5c61b915-bb43-4c24-bea5-21a53d319647)
+
 
