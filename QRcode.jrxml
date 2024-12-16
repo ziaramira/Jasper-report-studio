@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="QRcode" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b4dc979d-84cf-4e4d-b030-dccc96622e32">
+	<property name="com.jaspersoft.studio.data.sql.tables" value="IldPUktfT1JERVIiICwxNSwxNSw3OWQ2ODQ3Yy1hNGFhLTQwZGUtYmZlYi05NzVhMDVkNjdmNDg7"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="GP00"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+	"WOWO_CODE",
+	"WOWO_EQUIPMENT",
+	"WOWO_SUPERVISOR",
+	"WOWO_JOB"
+FROM "WORK_ORDER"]]>
+	</queryString>
+	<field name="WOWO_CODE" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="WOWO_CODE"/>
+		<property name="com.jaspersoft.studio.field.label" value="WOWO_CODE"/>
+	</field>
+	<field name="WOWO_EQUIPMENT" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="WOWO_EQUIPMENT"/>
+		<property name="com.jaspersoft.studio.field.label" value="WOWO_EQUIPMENT"/>
+	</field>
+	<field name="WOWO_SUPERVISOR" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="WOWO_SUPERVISOR"/>
+		<property name="com.jaspersoft.studio.field.label" value="WOWO_SUPERVISOR"/>
+	</field>
+	<field name="WOWO_JOB" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="WOWO_JOB"/>
+		<property name="com.jaspersoft.studio.field.label" value="WOWO_JOB"/>
+	</field>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<componentElement>
+				<reportElement x="20" y="11" width="100" height="30" uuid="e7a2ec5a-0f65-40e2-b39f-e6242360adb8"/>
+				<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[String.format("Equipement: %s\n Superviseur: %s\n N_d'OT: %d\n",$F{WOWO_EQUIPMENT},$F{WOWO_SUPERVISOR},$F{WOWO_CODE})]]></jr:codeExpression>
+				</jr:QRCode>
+			</componentElement>
+			<textField>
+				<reportElement x="120" y="10" width="80" height="30" uuid="feb27b2e-f1da-4d82-9a0c-72d34cf771f9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="156da661-3a24-4afa-9d8d-de41493bdb12"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{WOWO_CODE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="11" width="85" height="30" uuid="2a1c4cba-69a9-4b5f-9caf-552934437166">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="045d2c33-7239-464d-b01c-65c0436d7c6b"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{WOWO_SUPERVISOR}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="385" y="10" width="105" height="30" uuid="7cf1d48a-15ff-4e46-a7bb-a30d2eb5b85b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b673b2d1-ab89-4f0b-83d5-fc15220a38d0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{WOWO_JOB}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="11" width="80" height="30" uuid="b1521ac9-0f28-4c4d-8bf3-4198a2e325e2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f7b6386c-73b1-4b3a-8aef-4aad1b96793c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{WOWO_EQUIPMENT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
